@@ -1,3 +1,4 @@
+module Pong 
 using Nexa
 
 const PADDLE_WIDTH = 20
@@ -87,13 +88,19 @@ function render(ctx::Nexa.Context, game::Game)
     Nexa.render_text(ctx, my_font, string(game.score2), Nexa.WHITE, 680, 50)
 end
 
-game = on_run()
-Nexa.start(
-    () -> game,
-    (dt) -> update(dt, game),
-    (ctx) -> render(ctx, game),
-    "Pong",
-    1280,
-    720,
-    false
-)
+
+    function run()
+        game = on_run()
+        Nexa.start(
+            () -> game,
+            (dt) -> update(dt, game),
+            (ctx) -> render(ctx, game),
+            "Pong",
+            1280,
+            720,
+            false
+        )
+    end
+    
+    julia_main() = run()
+end # module
