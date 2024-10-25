@@ -349,7 +349,7 @@ version = "1.2.0"
 
 [[deps.Nexa]]
 deps = ["CEnum", "SimpleDirectMediaLayer"]
-git-tree-sha1 = "7c67942b6c3f4939e822afa4d9ec73889a6c0a5a"
+git-tree-sha1 = "14df12d0eb65d2993de24e64a9a87cf1f93c0de7"
 repo-rev = "main"
 repo-url = "https://github.com/SabeDoesThings/Nexa.jl"
 uuid = "762d48d5-c8ea-41cf-812d-d67cbd8ea08a"

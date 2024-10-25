@@ -30,7 +30,7 @@ mutable struct Game
     score2::Int
 end
 
-my_font = Nexa.load_font("./src/Pixeled.ttf", 25)
+# my_font = Nexa.load_font("./src/Pixeled.ttf", 25)
 
 function on_run()
     p1 = Paddle(30, 310, PADDLE_WIDTH, PADDLE_HEIGHT)
@@ -56,7 +56,7 @@ function update(dt::Float64, game::Game)
     game.ball.x += round(game.ball.dx * dt)
     game.ball.y += round(game.ball.dy * dt)
 
-    if game.ball.y <= 0 || game.ball.y + BALL_SIZE >= Nexa.get_window_height()
+    if game.ball.y <= 0 || game.ball.y + BALL_SIZE >= 720
         game.ball.dy = -game.ball.dy
     end
 
@@ -84,8 +84,8 @@ function render(ctx::Nexa.Context, game::Game)
 
     Nexa.render_circle_filled(ctx, game.ball.x, game.ball.y, BALL_SIZE, Nexa.WHITE)
 
-    Nexa.render_text(ctx, my_font, string(game.score1), Nexa.WHITE, 600, 50)
-    Nexa.render_text(ctx, my_font, string(game.score2), Nexa.WHITE, 680, 50)
+    #Nexa.render_text(ctx, my_font, string(game.score1), Nexa.WHITE, 600, 50)
+    #Nexa.render_text(ctx, my_font, string(game.score2), Nexa.WHITE, 680, 50)
 end
 
 
